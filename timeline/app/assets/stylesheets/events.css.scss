@@ -1,0 +1,41 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
+
+
+.event {
+	border-top: solid 1px #CCC;
+	padding: 10px 5px 5px 10px;
+	background-color: #101010;
+	color: #C8C8C8;
+}
+.event p {
+	margin: 4px 0;
+}
+.event title {
+	font-size: 26px;
+	color: #000; 
+}
+.event.hover {
+	background-color: #101010;
+}
+
+.event .admin {
+	display: none;
+	color: #C8C8C8;
+}
+
+.event.hover .admin {
+	display: inline;
+	color: #C8C8C8;
+}
+.hide {
+	display: none;
+}
+.bigtext{
+    font-size: 24pt;
+    font-style: bold;
+}
+
+

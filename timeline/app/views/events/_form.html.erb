@@ -1,0 +1,52 @@
+<%= simple_form_for(@event) do |f| %>
+<% if @event.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+  <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="container-fluid">
+  <legend>
+ <%= f.text_field :title,:placeholder => 'Title',:style => "width:270px; height:40px; font-size: 18pt; font-style: bold; "%>
+  </legend>
+  <div class="row-fluid">
+    <div class="span7">
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, :style => "width:420px;" %>
+      </div>
+    </div>
+    <div class="span5">
+    </br>
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
+    </br>
+      <div class="field">
+        <%= f.label :date %>
+        <%= f.text_field :date, :value=>Date.today.strftime('%m/%d/%Y'), :id =>"dp5" %>
+      </div> 
+    </br>
+      <div class="field">
+        <%= f.label :time%>
+        <%= f.text_field :time, :value=>Time.current, :id =>"tp1" %>
+      </div>
+      </br></br></br></br></br></br></br></br>
+      <div class="actions">
+        <%= f.button :submit, :class => "btn btn-large btn-block btn-success" %>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<% end %>

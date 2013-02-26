@@ -1,0 +1,29 @@
+<% @events.each_with_index do |event| %>
+  <%= render "events/event_partial", event: event %>
+  <tr class="<%= cycle('left', 'right') -%>">
+      <div class="container span6">
+      <div class = "event">
+        <div class="span1">
+        </div>
+        <div class="span4">
+
+          <td><%= link_to(image_tag(event.image.url(:medium)), "##{event.id}", {
+            :data => {:toggle => "modal"}}) %></td>
+          <p>
+            <div class="admin">
+              <div class="title">
+                <strong><%= event.title %></strong>
+                <p><%= event.time %> | <%= event.date %></p>
+              </div>
+            </div>
+          </p>
+        </div>
+        <div class="span1">
+        </div>
+      </div>
+    </div>
+  </tr>
+
+<% end %>
+
+<!--  -->
