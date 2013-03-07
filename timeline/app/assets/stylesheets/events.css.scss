@@ -4,11 +4,32 @@
 @import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
 
 
-.event {
-	border-top: solid 1px #CCC;
-	padding: 10px 5px 5px 10px;
+.event.left {
 	background-color: #101010;
+	height: 250px;
 	color: #C8C8C8;
+}
+.event.right {
+	background-color: #101010;
+	height: 250px;
+	color: #C8C8C8;
+}
+.popover.left{
+	background-color: #202020;
+	margin-top: -100px;
+	margin-left: 135px;
+}
+.popover.right{
+	background-color: #202020;
+	margin-top: -90px;
+	margin-left: -270px;
+}
+.modal{
+	background-color: #202020;
+	color: #C8C8C8;
+}
+.modaldetails{
+	padding: 20px;
 }
 .event p {
 	margin: 4px 0;
@@ -20,12 +41,10 @@
 .event.hover {
 	background-color: #101010;
 }
-
 .event .admin {
 	display: none;
 	color: #C8C8C8;
 }
-
 .event.hover .admin {
 	display: inline;
 	color: #C8C8C8;
@@ -38,4 +57,22 @@
     font-style: bold;
 }
 
+
+a img {
+    display: block;
+    
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+
+a:hover img {
+    opacity: 0.6;
+            
+}
+div.hoverText {
+	display: none;
+}
 

@@ -24,3 +24,16 @@ $(function() {
 $(function() {
 	$('#tp1').timepicker();
  });
+ $(function () {
+ 		$(".event").popover({html:true});
+        $(".event").popover('show');
+
+    });
+$("img").hover(
+  function () {
+    $(".hoverText").show();
+  }, 
+  function () {
+    $(".hoverText").hide();
+  }
+);
