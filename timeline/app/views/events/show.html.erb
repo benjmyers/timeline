@@ -2,7 +2,7 @@
     <div class="modal-header">
       <p><h3> <%= @event.title %> </h3></p>
   </div>
-  <div class="row-fluid">
+  <div class="row-fluid showevent">
     <div class="span4">
       <p>
         <%= image_tag @event.image.url(:large) %>
@@ -13,14 +13,18 @@
     </div>
     <div class="span8">
       <p>
+        <b>Date:</b>
+        <%= @event.date %>
+      </p>
+      <p>
+        <b>Time:</b>
+        <%= @event.time %>
+      </p>
+      <p>
         <b>Description:</b>
         <%= @event.description %>
       </p>
 
-      <p>
-        <b>Date:</b>
-        <%= @event.date %>
-      </p>
     </div>
   </div>
 </div>

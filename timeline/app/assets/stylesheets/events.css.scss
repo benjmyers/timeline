@@ -3,30 +3,81 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
 
-
+.container.span6.left {
+	border-right: solid 2px #202020;
+	height: 340px;
+}
+.container.span6.right {
+	border-left: solid 2px #202020;
+	height: 340px;
+}
 .event.left {
 	background-color: #101010;
 	height: 250px;
+	padding: 20px;
 	color: #C8C8C8;
 }
 .event.right {
 	background-color: #101010;
+	padding: 20px;
 	height: 250px;
 	color: #C8C8C8;
+}
+.event.new {
+	padding: 20px;
+	height: 250px;
+}
+.time-label-left {
+	text-align: right;
+	margin-top: -170px;
+	margin-left: 358px;
+	width: 100px;
+	border-bottom: solid 1px #080808;
+}
+.time-label-right {
+	text-align: left;
+	margin-top: 142px;
+	margin-left: 2px;
+	width: 100px;
+	border-bottom: solid 1px #080808;
+}
+.date-label-left {
+	border-top: solid 1px #080808;
+	margin-left: 3px; 
+	height: 30px;
+}
+.date-label-right {
+	border-top: solid 1px #080808;
+	margin-left: 3px; 
+	height: 50px;
+}
+.date-filler-left {
+	margin-left: 3px; 
+	height: 30px;
+}
+.date-filler-right {
+	margin-left: 3px; 
+	height: 50px;
 }
 .popover.left{
 	background-color: #202020;
 	margin-top: -100px;
-	margin-left: 135px;
+	margin-left: 325px;
 }
 .popover.right{
 	background-color: #202020;
-	margin-top: -90px;
+	margin-top: -100px;
 	margin-left: -270px;
 }
 .modal{
 	background-color: #202020;
 	color: #C8C8C8;
+	height: 600px;
+	width: 1000px;
+	margin-left: -520px;
+}
+.fade.in {
+	opacity: 0.95;
 }
 .modaldetails{
 	padding: 20px;
@@ -55,24 +106,37 @@
 .bigtext{
     font-size: 24pt;
     font-style: bold;
+    color: #C8C8C8;
 }
-
-
+.showevent{
+	padding: 20px;
+}
 a img {
-    display: block;
-    
+    display: block;    
     -webkit-transition: all 0.5s linear;
        -moz-transition: all 0.5s linear;
         -ms-transition: all 0.5s linear;
          -o-transition: all 0.5s linear;
             transition: all 0.5s linear;
 }
-
 a:hover img {
-    opacity: 0.6;
-            
+    opacity: 0.6;        
 }
-div.hoverText {
-	display: none;
+.popover.left .arrow::after {
+	border-left-color: #707070;
+}
+.popover.right .arrow::after {
+	border-right-color: #707070;
+}
+.popover-title {
+	background-color: #202020;
+	color: #C8C8C8;
+	font-weight: bold;
 }
 
+.form-horizontal .control-label {
+	text-align: left;
+}
+legend {
+	padding: 5px;
+}

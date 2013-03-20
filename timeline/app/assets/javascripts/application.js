@@ -26,14 +26,14 @@ $(function() {
  });
  $(function () {
  		$(".event").popover({html:true});
-        $(".event").popover('show');
+    $(".event").popover('show');
+  });
 
-    });
-$("img").hover(
-  function () {
-    $(".hoverText").show();
-  }, 
-  function () {
-    $(".hoverText").hide();
-  }
+  $("popover-inner").hover(
+    function () {
+      $(".popover.title").show();
+    }, 
+    function () {
+      $(".popover.title").hide();
+    }
 );

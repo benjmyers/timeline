@@ -4,6 +4,12 @@ class Event < ActiveRecord::Base
 	has_attached_file :image, :styles => { :large => "500x500>", :medium => "400x400#", :thumb => "100x100>" }
 	after_post_process :save_image_dimensions
 
+	validates :title, presence: true
+	validates :image, presence: true
+	validates :time, presence: true
+	validates :date, presence: true
+
+
   def save_image_dimensions
     geo = Paperclip::Geometry.from_file(image.queued_for_write[:original])
     self.image_width = geo.width
