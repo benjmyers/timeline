@@ -1,10 +1,10 @@
 == Timeline
 
-Timeline is a simple application aimed at concisely displaying timed and/or dated material. 
+Timeline is a simple Ruby on Rails web application aimed at concisely displaying timed and/or dated material. 
 
 It is being created for my Senior Capstone project at American University.
 
 
 == License
 
-Timeline is a work in progress. It is distributed under the Apache License version 2
+Timeline is a work in progress. It is distributed under the Apache License Version 2. See "license.txt" for more information.
