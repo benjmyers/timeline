@@ -44,11 +44,13 @@
 .date-label-left {
 	border-top: solid 1px #080808;
 	margin-left: 3px; 
+	padding-top: 3px;
 	height: 30px;
 }
 .date-label-right {
 	border-top: solid 1px #080808;
 	margin-left: 3px; 
+	padding-top: 6px;
 	height: 50px;
 }
 .date-filler-left {
@@ -139,4 +141,7 @@ a:hover img {
 }
 legend {
 	padding: 5px;
+}
+.div.description.span6 {
+	overflow: scroll;
 }
