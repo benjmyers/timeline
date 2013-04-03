@@ -13,8 +13,10 @@
  *= require bootstrap-datepicker
  *= require bootstrap-timepicker
  */
-
-
+.form-actions{
+  background-color: #080808;
+  border-top: 0px;
+}
 body {
 	padding-top: 50px;
 	padding-left: 10px;

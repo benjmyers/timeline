@@ -1,0 +1,14 @@
+<%= simple_form_for(@timeline_object) do |f| %>
+  <%= f.error_notification %>
+<div class="span12 row-fluid">
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+ </div>
+
+<% end %>

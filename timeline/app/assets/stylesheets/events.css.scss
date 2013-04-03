@@ -5,71 +5,64 @@
 
 .container.span6.left {
 	border-right: solid 2px #202020;
-	height: 340px;
+	margin-left: 0px;
 }
 .container.span6.right {
 	border-left: solid 2px #202020;
-	height: 340px;
+	margin-left: 0px;
 }
 .event.left {
 	background-color: #101010;
-	height: 250px;
-	padding: 20px;
+	align: center;
 	color: #C8C8C8;
+	padding: 10px;
 }
 .event.right {
 	background-color: #101010;
-	padding: 20px;
-	height: 250px;
 	color: #C8C8C8;
+	padding: 10px;
 }
 .event.new {
-	padding: 20px;
-	height: 250px;
+	//padding: 20px;
+	//height: 250px;
 }
 .time-label-left {
 	text-align: right;
-	margin-top: -170px;
-	margin-left: 358px;
-	width: 100px;
-	border-bottom: solid 1px #080808;
+	border-top: solid 1px #080808;
 }
 .time-label-right {
 	text-align: left;
-	margin-top: 142px;
-	margin-left: 2px;
-	width: 100px;
 	border-bottom: solid 1px #080808;
 }
 .date-label-left {
 	border-top: solid 1px #080808;
-	margin-left: 3px; 
-	padding-top: 3px;
-	height: 30px;
+	//margin-left: 3px; 
+	//padding-top: 3px;
+	//height: 30px;
 }
 .date-label-right {
 	border-top: solid 1px #080808;
-	margin-left: 3px; 
-	padding-top: 6px;
-	height: 50px;
+	//margin-left: 3px; 
+	//padding-top: 6px;
+	//height: 50px;
 }
 .date-filler-left {
 	margin-left: 3px; 
-	height: 30px;
+	//height: 30px;
 }
 .date-filler-right {
 	margin-left: 3px; 
-	height: 50px;
+	//height: 50px;
 }
 .popover.left{
 	background-color: #202020;
-	margin-top: -100px;
-	margin-left: 325px;
+	//margin-top: -100px;
+	//margin-left: 325px;
 }
 .popover.right{
 	background-color: #202020;
-	margin-top: -100px;
-	margin-left: -270px;
+	//margin-top: -100px;
+	//margin-left: -270px;
 }
 .modal{
 	background-color: #202020;
@@ -144,4 +137,10 @@ legend {
 }
 .div.description.span6 {
 	overflow: scroll;
+}
+.row-fluid .span6 {
+	width: 46.9%;
+}
+.id-hidden {
+	display: none;
 }

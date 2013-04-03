@@ -1,7 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @timeline_object.title %>
+  <b>User:</b>
+  <%= @timeline_object.user.user_name %>
+</br>
+  <%= @timeline_object.user_id %>
+</p>
+
+
 <% currentdate="none"%>
 <div class="eventcontainer span12 row-fluid">
 <!-- Go through each event (they are already ordered) and display -->
-<% @events.each do |event| %>
+<% @timeline_object.events.each do |event| %>
 
   <%= render "events/event_partial", event: event %>
 
@@ -50,3 +62,10 @@
         title='Add New'>
 </div> -->
 
+
+
+
+
+<%= link_to "New Event", new_event_path(:data => @timeline_object.id) %>
+<%= link_to 'Edit', edit_timeline_object_path(@timeline_object) %> |
+<%= link_to 'Back', timeline_objects_path %>

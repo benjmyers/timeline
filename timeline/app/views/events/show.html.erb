@@ -9,7 +9,7 @@
       </p>
       <%= link_to 'Edit', edit_event_path(@event) %> |
       <%= link_to "Delete", @event, method: :delete, data: { confirm: "Are you sure you want to delete this   @event?"} %> | 
-      <%= link_to 'Back', events_path %>
+      <%= link_to 'Back', timeline_object_path(@event.timeline_object_id) %>
     </div>
     <div class="span8">
       <p>
@@ -24,7 +24,6 @@
         <b>Description:</b>
         <%= @event.description %>
       </p>
-
     </div>
   </div>
 </div>

@@ -24,16 +24,16 @@ $(function() {
 $(function() {
 	$('#tp1').timepicker();
  });
- $(function () {
- 		$(".event").popover({html:true});
-    $(".event").popover('show');
-  });
+ // $(function () {
+ // 		$(".event").popover({html:true});
+ //    $(".event").popover('show');
+ //  });
 
-  $("popover-inner").hover(
+  $("popover-content").hover(
     function () {
-      $(".popover.title").show();
+      $(".popover-title").show();
     }, 
     function () {
-      $(".popover.title").hide();
+      $(".popover-title").hide();
     }
 );

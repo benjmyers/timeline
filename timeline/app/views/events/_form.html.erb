@@ -12,6 +12,7 @@
 <% end %>
 
 <div class="container-fluid">
+  <% timeline_id = params[:data] %>
   <legend>
  <%= f.text_field :title,:placeholder => 'Title',:style => "width:270px; height:40px; font-size: 18pt; font-style: bold; "%>
   </legend>
@@ -37,6 +38,9 @@
       <div class="field">
         <%= f.label :time%>
         <%= f.text_field :time, :value=>Time.current, :id =>"tp1" %>
+      </div>
+      <div class="id hidden">
+        <%= f.text_field :timeline_object_id, :value=> timeline_id %>
       </div>
       </br></br></br></br></br></br></br></br>
       <div class="actions">
