@@ -1,8 +1,10 @@
 class TimelineObjectsController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /timeline_objects
   # GET /timeline_objects.json
   def index
-    @timeline_objects = TimelineObject.all
+    @timeline_objects = TimelineObject.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb

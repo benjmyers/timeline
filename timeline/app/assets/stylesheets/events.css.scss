@@ -1,31 +1,11 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// http://stackoverflow.com/questions/10180791/how-to-make-text-appear-on-top-of-the-image-when-hovering
 @import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
 
-.container.span6.left {
-	border-right: solid 2px #202020;
-	margin-left: 0px;
-}
-.container.span6.right {
-	border-left: solid 2px #202020;
-	margin-left: 0px;
-}
-.event.left {
-	background-color: #101010;
-	align: center;
-	color: #C8C8C8;
-	padding: 10px;
-}
-.event.right {
-	background-color: #101010;
-	color: #C8C8C8;
-	padding: 10px;
-}
-.event.new {
-	//padding: 20px;
-	//height: 250px;
-}
+
+
 .time-label-left {
 	text-align: right;
 	border-top: solid 1px #080808;
@@ -36,33 +16,21 @@
 }
 .date-label-left {
 	border-top: solid 1px #080808;
-	//margin-left: 3px; 
-	//padding-top: 3px;
-	//height: 30px;
 }
 .date-label-right {
 	border-top: solid 1px #080808;
-	//margin-left: 3px; 
-	//padding-top: 6px;
-	//height: 50px;
 }
 .date-filler-left {
 	margin-left: 3px; 
-	//height: 30px;
 }
 .date-filler-right {
 	margin-left: 3px; 
-	//height: 50px;
 }
 .popover.left{
 	background-color: #202020;
-	//margin-top: -100px;
-	//margin-left: 325px;
 }
 .popover.right{
 	background-color: #202020;
-	//margin-top: -100px;
-	//margin-left: -270px;
 }
 .modal{
 	background-color: #202020;
@@ -115,8 +83,11 @@ a img {
             transition: all 0.5s linear;
 }
 a:hover img {
-    opacity: 0.6;        
+
+    opacity: 0.6;  
+     
 }
+
 .popover.left .arrow::after {
 	border-left-color: #707070;
 }

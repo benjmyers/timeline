@@ -13,6 +13,10 @@
  *= require bootstrap-datepicker
  *= require bootstrap-timepicker
  */
+h1 {
+  border-bottom: 1px solid #C8C8C8;
+  padding: 2px;
+}
 .form-actions{
   background-color: #080808;
   border-top: 0px;
@@ -63,18 +67,18 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: black;
   display: table;
 }
 
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 1px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #000000;
   h2 {
     text-align: left;
     font-weight: bold;
@@ -82,7 +86,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: #000;
     color: #fff;
   }
   ul li {

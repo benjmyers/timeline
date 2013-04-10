@@ -3,12 +3,17 @@ Timeline::Application.routes.draw do
 
 
   devise_for :users
+  devise_scope :user do
+    get 'register', to: 'devise/registrations#new', as: :register
+    get 'login', to: 'devise/sessions#new', as: :login
+  end
+
 
   resources :events
-
-
+  get 'timelines', to: 'timeline_objects#index', as: :timelines
+  get 'newtimeline', to: 'timeline_objects#new', as: :newtimeline
   get "home/index"
-
+  root :to => 'home#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,7 +63,7 @@ Timeline::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index'
+   
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,8 +1,20 @@
 <div class="span12 row-fluid"
-	<div class="page-header">
-	  <h1>Welcome to Timeline.</h1>
+	<div class="page-header span12">
+		<div class="span8">
+	  		<h1>Welcome to Timeline.</h1>
+		</div>
 	</div>
+	<div class="span12 row-fluid">
+	<% if user_signed_in? %>
 	<div class="container span5" align="center">
-		<%= link_to "Get Started", new_timeline_object_path, class: "btn btn-inverse btn-large btn-block" %>
+		<%= link_to "New Timeline", newtimeline_path, class: "btn btn-inverse btn-large btn-block" %>
+		<%= link_to "Your Timelines", timelines_path, class: "btn btn-inverse btn-large btn-block" %>
+	<% else %>
+		<div class="container span5" align="center">
+		<%= link_to "Sign Up!", register_path, class: "btn btn-success btn-large btn-block" %>
+		<%= link_to "Log In", login_path, class: "btn btn-success btn-large btn-block" %>
+	<% end %>
+
+	</div>
 	</div>
 </div>

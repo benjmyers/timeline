@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.sort_by(&:date)#.sort_by(&:time)
+    @events = Event.all.sort_by {|x| [x.date, x.time]}
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
     end
-  end
+  end 
 
   # GET /events/1
   # GET /events/1.json
