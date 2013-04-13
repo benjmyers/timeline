@@ -8,13 +8,18 @@ gem 'rails', '3.2.12'
 
 gem "paperclip", '3.4.0'
 gem 'cocaine', '~> 0.4.0'
-gem 'sqlite3'
 gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails', :require => 'bootstrap-timepicker-rails',
                               :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
 
 gem 'devise'
+group :development, :test do
+	gem 'sqlite3'
+end
+group :production do
+	gem "pg"
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
