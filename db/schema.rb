@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130409203152) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.integer  "user_id"
+    t.string   "events"
     t.string   "description"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130409203152) do
     t.datetime "image_updated_at"
   end
 
+  add_index "timeline_objects", ["events"], :name => "index_timeline_objects_on_events"
   add_index "timeline_objects", ["user_id"], :name => "index_timeline_objects_on_user_id"
 
   create_table "users", :force => true do |t|
