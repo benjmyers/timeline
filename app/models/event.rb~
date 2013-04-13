@@ -1,0 +1,5 @@
+class Event < ActiveRecord::Base
+	include Paperclip::Glue
+  	attr_accessible :date, :description, :time, :title, :image
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+end

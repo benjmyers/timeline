@@ -1,0 +1,31 @@
+<h1>Listing events</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+<th>Image</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.title %></td>
+	<td><%= event.image.url(:medium) %></td>
+    <td><%= event.description %></td>
+    <td><%= event.date %></td>
+    <td><%= event.time %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event', new_event_path %>

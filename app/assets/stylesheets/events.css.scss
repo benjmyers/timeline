@@ -1,0 +1,117 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// http://stackoverflow.com/questions/10180791/how-to-make-text-appear-on-top-of-the-image-when-hovering
+@import url('http://twitter.github.com/bootstrap/assets/css/bootstrap.css');
+
+
+
+.time-label-left {
+	text-align: right;
+	border-top: solid 1px #080808;
+}
+.time-label-right {
+	text-align: left;
+	border-bottom: solid 1px #080808;
+}
+.date-label-left {
+	border-top: solid 1px #080808;
+}
+.date-label-right {
+	border-top: solid 1px #080808;
+}
+.date-filler-left {
+	margin-left: 3px; 
+}
+.date-filler-right {
+	margin-left: 3px; 
+}
+.popover.left{
+	background-color: #202020;
+}
+.popover.right{
+	background-color: #202020;
+}
+.modal{
+	background-color: #202020;
+	color: #C8C8C8;
+	height: 600px;
+	width: 1000px;
+	margin-left: -520px;
+}
+.fade.in {
+	opacity: 0.95;
+}
+.modaldetails{
+	padding: 20px;
+}
+.event p {
+	margin: 4px 0;
+}
+.event title {
+	font-size: 26px;
+	color: #000; 
+}
+.event.hover {
+	background-color: #101010;
+}
+.event .admin {
+	display: none;
+	color: #C8C8C8;
+}
+.event.hover .admin {
+	display: inline;
+	color: #C8C8C8;
+}
+.hide {
+	display: none;
+}
+.bigtext{
+    font-size: 24pt;
+    font-style: bold;
+    color: #C8C8C8;
+}
+.showevent{
+	padding: 20px;
+}
+a img {
+    display: block;    
+    -webkit-transition: all 0.5s linear;
+       -moz-transition: all 0.5s linear;
+        -ms-transition: all 0.5s linear;
+         -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+}
+a:hover img {
+
+    opacity: 0.6;  
+     
+}
+
+.popover.left .arrow::after {
+	border-left-color: #707070;
+}
+.popover.right .arrow::after {
+	border-right-color: #707070;
+}
+.popover-title {
+	background-color: #202020;
+	color: #C8C8C8;
+	font-weight: bold;
+}
+
+.form-horizontal .control-label {
+	text-align: left;
+}
+legend {
+	padding: 5px;
+}
+.div.description.span6 {
+	overflow: scroll;
+}
+.row-fluid .span6 {
+	width: 46.9%;
+}
+.id-hidden {
+	display: none;
+}
