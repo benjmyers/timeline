@@ -25,19 +25,6 @@ $(function() {
 	$('#tp1').timepicker({minuteStep: 1,
                 showMeridian: false});
  });
- // $(function () {
- // 		$(".event").popover({html:true});
- //    $(".event").popover('show');
- //  });
-
- //  $("popover-content").hover(
- //    function () {
- //      $(".popover-title").show();
- //    }, 
- //    function () {
- //      $(".popover-title").hide();
- //    }
-	// );
 
   $('.row_1').hover(
     function(){
