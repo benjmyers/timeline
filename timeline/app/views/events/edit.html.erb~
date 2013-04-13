@@ -1,7 +1,0 @@
-
-<%= form_for @event, :url => event_path, :html => { :multipart => true } do |form| %>
-  <%= form.file_field :image %>
-<% end %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
