@@ -13,25 +13,96 @@
  *= require bootstrap-datepicker
  *= require bootstrap-timepicker
  */
+.navbar .nav > li > a {
+  color: #FF9800;
+}
+ .navbar-inverse .brand {
+    color: #FF9800;
+
+ }
+ .offset {
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+ }
+.maincontainer {
+  height: 100%;
+  width: 100%;
+
+}
+.isotopecontainer {
+  width:100%;
+}
+.entry {
+  position:absolute;
+  top:25%;
+  background-color: #101010;
+  border-radius: 15px;
+  padding: 20px;
+  opacity: .95;
+}
+.image-wrap {
+  display: block;
+  background-image: url('img1.jpg');
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  min-width: 50%;
+  height: 100%;
+  width: 100%;
+}
+.page-header {
+  padding: 0px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  border-bottom: 1px solid #FFF;
+
+
+}
+.btn-block {
+  color: #C8C8C8;
+}
+.homelinks {
+  position:absolute;
+  top:65%;
+  background-color: #101010;
+  border-radius: 15px;
+  padding: 20px;
+  opacity: .95;
+
+}
 h1 {
-  border-bottom: 1px solid #C8C8C8;
+  border-bottom: 0px solid #fff;
   padding: 2px;
+  margin-bottom: 5px;
+  color: #FF9800;
+
+}
+h2.with-yellow{
+  border-bottom: 1px solid #FF9800;
+  padding-bottom: 5px;
 }
 .form-actions{
   background-color: #080808;
   border-top: 0px;
 }
 body {
-	padding-top: 50px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+  padding-bottom: 0px;
   background-color: #101010;
   color: #C8C8C8;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  
 }
-
+html {
+  height: 100%;
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -45,9 +116,9 @@ pre {
 }
 
 a {
-  color: #C8C8C8;
+  color: #fff;
   &:visited {
-    color: #666;
+    color: #fff;
   }
   &:hover {
     color: #fff;
@@ -93,4 +164,72 @@ div {
     font-size: 12px;
     list-style: square;
   }
+
+/* ------------------ isotope ------------------ */
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+}
+.btn-custom {
+  background-color: hsl(219, 21%, 59%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a5b0c4", endColorstr="#808fac");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#a5b0c4), to(#808fac));
+  background-image: -moz-linear-gradient(top, #a5b0c4, #808fac);
+  background-image: -ms-linear-gradient(top, #a5b0c4, #808fac);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b0c4), color-stop(100%, #808fac));
+  background-image: -webkit-linear-gradient(top, #a5b0c4, #808fac);
+  background-image: -o-linear-gradient(top, #a5b0c4, #808fac);
+  background-image: linear-gradient(#a5b0c4, #808fac);
+  border-color: #808fac #808fac hsl(219, 21%, 56%);
+  color: #333 !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.19);
+  -webkit-font-smoothing: antialiased;
 }

@@ -1,19 +1,26 @@
-<h2>Sign up</h2>
+<div class="maincontainer">
+  <div class="image-wrap">
+    <div class="entry offset2">
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <h2 class="with-yellow">Sign up</h2>
 
-  <div class="form-inputs form-horizontal">
+      <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
-    <%= f.input :user_name, :required => true %>
+      <div class="form-inputs form-horizontal">
+
+        <%= f.input :email, :required => true, :autofocus => true %>
+        <%= f.input :password, :required => true %>
+        <%= f.input :password_confirmation, :required => true %>
+        <%= f.input :user_name, :required => true %>
+      </div>
+
+      <div class="actions">
+        <%= f.button :submit, "Sign Up", :class => "btn btn-inverse" %>
+      </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

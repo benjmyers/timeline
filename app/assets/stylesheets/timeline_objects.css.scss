@@ -1,6 +1,9 @@
 // Place all the styles related to the TimelineObjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.footer {
+	padding-top: 70px;
+}
 .timelineindexheader {
 	padding: 10px;
 	border-bottom: 3px solid #080808;
@@ -10,43 +13,55 @@
 	padding-right: 10px;
 }
 blockquote {
-	border-left: 5px solid #282828;
+	border-left: 5px solid #263248;
 }
 p.title {
 	font-size: 22px;
-	color: #fff; 
+	color: #FF9800; 
 	padding-bottom: 4px;
 }
 .displaytimelinetitle {
 	margin-left: 0px;
 }
-.eventcontainer.span6.left {
-	border-right: solid 2px #202020;
-	margin-left: 0px;
-	padding: 10px;
+.isotopecontainer {
+/*height: 100%;*/
 }
-.eventcontainer.span6.right {
-	border-left: solid 2px #202020;
-	margin-left: 0px;
+.item {
 	padding: 10px;
-}
-.event {
 	border-radius: 15px;
 	background-color: #282828;
-}
-.event.left {
-	background-color: #282828;
-	align: center;
-	color: #C8C8C8;
-	padding: 10px;
-}
-.event.right {
-	background-color: #282828;
-	align: center;
-	color: #C8C8C8;
-	padding: 10px;
 }
 .eventnew {
 	border-top: 3px solid #080808;
 	padding: 10px;
+}
+.element.other.nonmetal {
+	background-color: #282828;
+	font-size: 2em;
+}
+
+.element .name {
+	
+	font-size: 0.6em;
+	bottom: 20.8em;
+	color: #7E8AA2;
+}
+.element .weight {
+	font-size: 0.5em;
+	left: 0.7em;
+	bottom: 23.5em;
+	color: #7E8AA2;
+}
+.element .symbol {
+	left: 0.05em;
+
+}
+.element .number {
+	font-size: 1.15em;
+	color: #FF9800;
+	font-weight: normal;
+
+}
+h2 {
+	color: #7E8AA2;
 }

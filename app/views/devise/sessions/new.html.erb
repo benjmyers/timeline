@@ -1,15 +1,24 @@
-<h2>Sign in</h2>
+<div class="maincontainer">
+	<div class="image-wrap">
+		<div class="entry offset2">
 
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, :required => false, :autofocus => true %>
-    <%= f.input :password, :required => false %>
-    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
+			<h2 class="with-yellow">Sign In</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
-<% end %>
+      <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-<%= render "devise/shared/links" %>
+			<div class="form-inputs form-horizontal">
+				<%= f.input :email, :required => true, :autofocus => true %>
+				<%= f.input :password, :required => true %>
+				<%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+			</div>
+
+			<div class="actions">
+				<%= f.button :submit, "Sign In", :class => "btn btn-inverse" %>
+			</div>
+			<% end %>
+
+			<%= render "devise/shared/links" %>
+		</div>
+	</div>
+</div>

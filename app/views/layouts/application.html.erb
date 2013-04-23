@@ -8,7 +8,25 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-
+	<script type="text/javascript">
+		function Randomize() {
+			var images = new Array("img1.jpg","img2.jpg","img3.jpg","img4.jpg");
+			var imageNum = Math.floor(Math.random() * images.length);
+			document.getElementById("homecontainer").style.backgroundImage = "url('/assets/" + images[imageNum] + "')";
+		}
+		window.onload = Randomize;
+	</script>
+	<style type="text/css">
+		#homecontainer {
+			  display: block;
+			  background-image: url('img1.jpg');
+			  background-repeat:no-repeat;
+			  background-size:100% 100%;
+			  min-width: 50%;
+			  height: 100%;
+			  width: 100%;
+		}
+	</style>
 	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
 			<div class="container">
@@ -35,22 +53,21 @@
 		</div>
 	</div>
 
-
-	<div class="container">
-		<% if flash[:notice] %>
-			<div class="alert alert-success">
-				<button class="close" data-dismiss="alert">x</button>
-				<%= flash[:notice] %>
-			</div>
-		<% end %>
-		<% if flash[:alert] %>
-			<div class="alert alert-error">
-				<button class="close" data-dismiss="alert">x</button>
-				<%= flash[:alert] %>
-			</div>
-		<% end %>
-		<%= yield %>
-	</div>
+		<div class="maincontainer">
+			<% if flash[:notice] %>
+				<div class="alert alert-success">
+					<button class="close" data-dismiss="alert">x</button>
+					<%= flash[:notice] %>
+				</div>
+			<% end %>
+			<% if flash[:alert] %>
+				<div class="alert alert-error">
+					<button class="close" data-dismiss="alert">x</button>
+					<%= flash[:alert] %>
+				</div>
+			<% end %>
+			<%= yield %>
+		</div>
 
 
 </body>

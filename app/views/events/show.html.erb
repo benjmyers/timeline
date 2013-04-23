@@ -1,3 +1,5 @@
+<div class="maincontainer">
+  <div class="offset">
 <div class="container-fluid">
     <div class="modal-header">
       <p><h3> <%= @event.title %> </h3></p>
@@ -8,7 +10,7 @@
         <%= image_tag @event.image.url(:large) %>
       </p>
       <%= link_to 'Edit', edit_event_path(@event) %> |
-      <%= link_to "Delete", @event, method: :delete, data: { confirm: "Are you sure you want to delete this   @event?"} %> | 
+      <%= link_to "Delete", @event, method: :delete, data: { confirm: "Are you sure you want to delete this event?"} %> | 
       <%= link_to 'Back', timeline_object_path(@event.timeline_object_id) %>
     </div>
     <div class="span8">
@@ -26,4 +28,6 @@
       </p>
     </div>
   </div>
+</div>
+</div>
 </div>

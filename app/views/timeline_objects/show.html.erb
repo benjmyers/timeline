@@ -1,8 +1,11 @@
+<!-- <link rel="stylesheet" href="../assets/style.css" /> -->
+<div class="maincontainer">
+  <div class="offset">
 <div class="timelineindexheader span12">
   <div class="timelinethumb span2">
     <%= image_tag @timeline_object.image.url(:thumb) %>
   </div>
-  <div class="displaytimelinetitle span9">
+  <div class="displaytimelinetitle span10">
     <p class="title">
       <%= @timeline_object.title %>
     </p>
@@ -12,54 +15,215 @@
   </div>
 </div>
 
+<div class="isotopecontainer span12">
 <% currentdate="none"%>
-<div class="eventcontainer span12 row-fluid">
+<div id="eventcontainer">
 <!-- Go through each event (they are already ordered) and display -->
 <% @timeline_object.get_events.each do |event| %>
 
   <%= render "events/event_partial", event: event %>
 
-  <tr class="<%= cycle('left', 'right') -%>">
-    <div class="eventcontainer span6 <%= current_cycle %> row-fluid">
 
-      <!-- If the date is different than the last iteration, create a label -->
-      <% if(!currentdate.eql? event.date) %>
-        <div class="date-label-<%= current_cycle %> span2">
-          <%= event.date %>
-        </div>
-      <% else %>
-        <div class="date-filler-<%= current_cycle %> span2"></div>
-      <% end %>
+    <!-- Set up the popover with hidden modal. -->
+    <div class="element other nonmetal large" data-symbol="Bi" data-category="post-transition">
+      <p class="number"><%= event.title %></p>
+      <div class = "symbol"><%= link_to(image_tag(event.image.url(:medium)), "##{event.id}", {:data => {:toggle => "modal"}}) %></div>
+      <h2 class="name"><%= event.time %></h2>
+      <p class="weight"><%= event.date %></p>
 
-      <!-- Save the current date to check if it's changed on the next iteration -->
-      <% currentdate=event.date.clone %>
-
-      <!-- If the event's on the right, add the time label on the left -->
-     <% if(current_cycle == 'right')%>
-        <div class="time-label-<%= current_cycle %> span1">
-          <%= event.time %>
-        </div>
-      <% end %>
-
-      <!-- Set up the popover with hidden modal. -->
-      <div class="event <%= current_cycle %> span8">
-        <%= link_to(image_tag(event.image.url(:medium)), "##{event.id}", {:data => {:toggle => "modal"}}) %>
-      </div>
-
-      <!-- If the event's on the left, add the time label on the right -->
-      <% if(current_cycle == 'left')%>
-        <div class="time-label-<%= current_cycle %> span1">
-          <%= event.time %>
-        </div>
-      <% end %>
     </div>
-  </tr>
+
+
 
 <% end %>
+
+</div>
+  <script src="../assets/jquery-1.7.1.min.js"></script>
+  <script src="../assets/jquery.isotope.min.js"></script>
+  <script>
+    $(function(){
+
+      var $container = $('#eventcontainer');
+      $container.imagesLoaded(function(){
+        $container.isotope({
+          itemSelector : '.element',
+          layoutMode : 'spineAlign',
+            spineAlign: {
+              gutterWidth: 30
+          },
+              
+      });
+     });
+        // add randomish size classes
+      $container.find('.element').each(function(){
+        var $this = $(this),
+            number = parseInt( $this.find('.number').text(), 10 );
+        if ( number % 7 % 2 === 1 ) {
+          $this.addClass('width2');
+        }
+        if ( number % 3 === 0 ) {
+          $this.addClass('height2');
+        }
+      });
+    });
+    // custom layout mode spineAlign
+  $.Isotope.prototype._spineAlignReset = function() {
+    this.spineAlign = {
+      colA: 0,
+      colB: 0
+    };
+  };
+
+  $.Isotope.prototype._spineAlignLayout = function( $elems ) {
+    var instance = this,
+        props = this.spineAlign,
+        gutterWidth = Math.round( this.options.spineAlign && this.options.spineAlign.gutterWidth ) || 0,
+        centerX = Math.round(this.element.width() / 2);
+
+    $elems.each(function(){
+      var $this = $(this),
+          isColA = props.colA <= props.colB,
+          x = isColA ?
+            centerX - ( $this.outerWidth(true) + gutterWidth / 2 ) : // left side
+            centerX + gutterWidth / 2, // right side
+          y = isColA ? props.colA : props.colB;
+      instance._pushPosition( $this, x, y );
+      props[( isColA ? 'colA' : 'colB' )] += $this.outerHeight(true);
+    });
+  };
+
+  $.Isotope.prototype._spineAlignGetContainerSize = function() {
+    var size = {};
+    size.height = this.spineAlign[( this.spineAlign.colB > this.spineAlign.colA ? 'colB' : 'colA' )];
+    return size;
+  };
+
+  $.Isotope.prototype._spineAlignResizeChanged = function() {
+    return true;
+  };
+
+
+  $(function(){
+    
+    var $container = $('#eventcontainer');
+    
+    
+      // add randomish size classes
+      $container.find('.element').each(function(){
+        var $this = $(this),
+            number = parseInt( $this.find('.number').text(), 10 );
+        if ( number % 7 % 2 === 1 ) {
+          $this.addClass('width2');
+        }
+        if ( number % 3 === 0 ) {
+          $this.addClass('height2');
+        }
+      });
+    
+    $container.isotope({
+      itemSelector : '.element',
+      layoutMode: 'spineAlign',
+      spineAlign: {
+        gutterWidth: 20
+      },
+      getSortData : {
+        symbol : function( $elem ) {
+          return $elem.attr('data-symbol');
+        },
+        category : function( $elem ) {
+          return $elem.attr('data-category');
+        },
+        number : function( $elem ) {
+          return parseInt( $elem.find('.number').text(), 10 );
+        },
+        weight : function( $elem ) {
+          return parseFloat( $elem.find('.weight').text().replace( /[\(\)]/g, '') );
+        },
+        name : function ( $elem ) {
+          return $elem.find('.name').text();
+        }
+      }
+    });
+      
+    
+      var $optionSets = $('#options .option-set'),
+          $optionLinks = $optionSets.find('a');
+
+      $optionLinks.click(function(){
+        var $this = $(this);
+        // don't proceed if already selected
+        if ( $this.hasClass('selected') ) {
+          return false;
+        }
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
+  
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+            key = $optionSet.attr('data-option-key'),
+            value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[ key ] = value;
+        if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+          // changes in layout modes need extra logic
+          changeLayoutMode( $this, options )
+        } else {
+          // otherwise, apply new options
+          $container.isotope( options );
+        }
+        
+        return false;
+      });
+
+
+    
+      $('#insert a').click(function(){
+        var $newEls = $( fakeElement.getGroup() );
+        $container.isotope( 'insert', $newEls );
+
+        return false;
+      });
+
+      $('#append a').click(function(){
+        var $newEls = $( fakeElement.getGroup() );
+        $container.append( $newEls ).isotope( 'appended', $newEls );
+
+        return false;
+      });
+
+
+    
+      // change size of clicked element
+      $container.delegate( '.element', 'click', function(){
+        $(this).toggleClass('large');
+        $container.isotope('reLayout');
+      });
+
+      // toggle variable sizes of all elements
+      $('#toggle-sizes').find('a').click(function(){
+        $container
+          .toggleClass('variable-sizes')
+          .isotope('reLayout');
+        return false;
+      });
+
+
+    var $sortBy = $('#sort-by');
+    $('#shuffle a').click(function(){
+      $container.isotope('shuffle');
+      $sortBy.find('.selected').removeClass('selected');
+      $sortBy.find('[data-option-value="random"]').addClass('selected');
+      return false;
+    });
+    
+  });
+  </script>
 </div>
 <div class="eventnew span12 row-fluid">
     <div class="span4 offset8">
-    <%= link_to "Add Event", new_event_path(:data => @timeline_object.id), class: "btn btn-success btn-large btn-block" %>
+    <%= link_to "Add Event", new_event_path(:data => @timeline_object.id), class: "btn btn-custom btn-large btn-block" %>
     </div>
 </div> 
 
@@ -70,4 +234,6 @@
     <%= link_to 'Edit', edit_timeline_object_path(@timeline_object) %> |
     <%= link_to 'Back', timeline_objects_path %>
   </div>
+</div>
+</div>
 </div>

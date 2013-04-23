@@ -1,19 +1,23 @@
-<div class="span12 row-fluid">
+<div class="maincontainer">
+	<div class="offset">
+		<div class="span12 row-fluid">
 
-<h2>Your Timelines</h2>
+			<h2>Your Timelines</h2>
 
-<% @timeline_objects.each do |timeline_object| %>
-  <div class="span6 row-fluid">
-      <blockquote>
-	        <p class="title"><%= timeline_object.title %></p>
-	        <p> <%= link_to (image_tag timeline_object.image.url(:thumb)), timeline_object %> </p>
-	        <small> <%= link_to 'Edit', edit_timeline_object_path(timeline_object) %> | <%= link_to 'Delete', timeline_object, method: :delete, data: { confirm: 'Are you sure?' } %> </td></small>
-	      </blockquote>
-  </div>
-<% end %>
-	<div class="span12">
-	  <div class="container span4">
-	  <%= link_to "New Timeline", new_timeline_object_path, class: "btn btn-success btn-large btn-block" %>
-	  </div>
+			<% @timeline_objects.each do |timeline_object| %>
+			<div class="span6 row-fluid">
+				<blockquote>
+					<p class="title"><%= timeline_object.title %></p>
+					<p> <%= link_to (image_tag timeline_object.image.url(:thumb)), timeline_object %> </p>
+					<small> <%= link_to 'Edit', edit_timeline_object_path(timeline_object) %> | <%= link_to 'Delete', timeline_object, method: :delete, data: { confirm: 'Are you sure?' } %> </td></small>
+				</blockquote>
+			</div>
+			<% end %>
+			<div class="footer span12">
+				<div class="container span4 offset7">
+					<%= link_to "New Timeline", new_timeline_object_path, class: "btn btn-custom btn-large btn-block" %>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

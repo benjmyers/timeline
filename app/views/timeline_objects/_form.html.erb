@@ -1,32 +1,39 @@
-<%= simple_form_for(@timeline_object) do |f| %>
-<% if @timeline_object.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@timeline_object.errors.count, "error") %> prohibited this timeline from being saved:</h2>
+<div class="span12 row-fluid">
 
-  <ul>
-    <% @timeline_object.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-<div class="form-inputs form-horizontal">
-	<legend>
-		<%= f.text_field :title,:placeholder => 'Title',:style => "width:270px; height:40px; font-size: 18pt; font-style: bold; "%>
-	</legend>
-	<div class="span12">
-		<div class="field span8">
-			<%= f.label :description %>
-			<%= f.text_area :description, :style => "width:450px; height:20px;" %>
-		</div>
-		<div class="field span3">
-			<p> Image Thumbnail </br><%= f.file_field :image %></p> 
+	<%= simple_form_for(@timeline_object) do |f| %>
+	<% if @timeline_object.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@timeline_object.errors.count, "error") %> prohibited this timeline from being saved:</h2>
+
+		<ul>
+			<% @timeline_object.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<div class="form-inputs form-horizontal">
+		<legend>
+			<%= f.text_field :title,:placeholder => 'Title',:style => "width:270px; height:40px; font-size: 18pt; font-style: bold; "%>
+		</legend>
+		<div class="span12">
+			<div class="field span8">
+				<%= f.label :description %>
+				<%= f.text_area :description, :style => "width:450px; height:20px;" %>
+			</div>
+			<div class="field span3">
+				<p> Image Thumbnail </br><%= f.file_field :image %></p> 
+			</div>
 		</div>
 	</div>
-</div>
+	
 
-<div class="form-actions">
-	<%= f.button :submit, :class => "btn btn-success", :style => "margin:20px;" %>
-</div>
 
-<% end %>
+	<div class="footer span12">
+		<div class="container span4 offset7">
+			<%= f.button :submit, :class => "btn btn-custom btn-large btn-block" %>
+		</div>
+	</div>
+	<% end %>
+	
+</div>
