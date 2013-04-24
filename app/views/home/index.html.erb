@@ -14,20 +14,23 @@
 				</div>
 			<% end %>
 		</div>
-		<div class="span7 offset7">
-			<div class="homelinks span7">
+			<div class="homelinks span7 offset7">
 				<div class="page-header span7">
 					<div class="span7">
-						<h1>Welcome to Timeline.</h1>
+						<% if user_signed_in? %>
+							<h1>Welcome, <%= current_user.user_name %></h1>
+						<% else %>
+							<h1>Welcome to Timeline.</h1>
+						<% end %>
 					</div>
 				</div>
 				<div class="span7">
 					<% if user_signed_in? %>
-					<div class="container span6">
+					<div class="buttoncontainer span6">
 						<%= link_to "New Timeline", newtimeline_path, class: "btn btn-custom btn-large btn-block" %>
 						<%= link_to "Your Timelines", timelines_path, class: "btn btn-custom btn-large btn-block" %>
 					<% else %>
-					<div class="container span6">
+					<div class="buttoncontainer span6">
 						<%= link_to "Sign Up!", register_path, class: "btn btn-custom btn-large btn-block" %>
 						<%= link_to "Log In", login_path, class: "btn btn-custom btn-large btn-block" %>
 						<% end %>
@@ -36,4 +39,3 @@
 			</div>
 		</div>
 	</div>
-</div>

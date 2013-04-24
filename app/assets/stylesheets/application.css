@@ -13,8 +13,16 @@
  *= require bootstrap-datepicker
  *= require bootstrap-timepicker
  */
+ 
+.buttoncontainer {
+  float:center;
+}
+ .modal-header {
+  border-bottom: 1px solid #FF9800;
+ }
+
 .navbar .nav > li > a {
-  color: #FF9800;
+  color: #7E8AA2;
 }
  .navbar-inverse .brand {
     color: #FF9800;
@@ -73,14 +81,27 @@
 h1 {
   border-bottom: 0px solid #fff;
   padding: 2px;
-  margin-bottom: 5px;
+  margin-bottom: 13px;
   color: #FF9800;
 
+}
+h3.with-blue{
+    border-bottom: 1px solid #263248;
+    padding-bottom: 5px;
+    color: #7E8AA2;
 }
 h2.with-yellow{
   border-bottom: 1px solid #FF9800;
   padding-bottom: 5px;
 }
+h2.modalheader {
+  color: #7E8AA2;
+  border-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin:0px;
+}
+
 .form-actions{
   background-color: #080808;
   border-top: 0px;

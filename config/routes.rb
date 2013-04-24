@@ -9,7 +9,7 @@ Timeline::Application.routes.draw do
   end
 
 
-  resources :events
+  resources :events, :only => [:create, :new,:edit, :show, :update, :destroy]
   get 'timelines', to: 'timeline_objects#index', as: :timelines
   get 'newtimeline', to: 'timeline_objects#new', as: :newtimeline
   get "home/index"

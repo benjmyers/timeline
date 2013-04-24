@@ -1,59 +1,61 @@
 <div class="maincontainer">
   <div class="offset">
-<%= simple_form_for(@event, html: {class: "form-horizontal"}) do |f| %>
-<% if @event.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <div class="span12 offset1">
 
-  <ul>
-    <% @event.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+      <%= simple_form_for(@event, html: {class: "form-horizontal"}) do |f| %>
+      <% if @event.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+        <ul>
+          <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
 
-<div class="container-fluid">
-  <legend><div class="bigtext">Edit</div>
- <%= f.text_field :title,:placeholder => 'Title',:style => "width:270px; height:40px; font-size: 18pt; font-style: bold; "%>
-  </legend>
-  <div class="row-fluid">
-    <div class="span7">
-      <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description, :style => "width:420px;" %>
-      </div>
-      <%= link_to 'Back', events_path %>
-    </div>
-    <div class="span5">
-    </br>
-      <div class="field">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-      </div>
-    </br>
-      <div class="field">
-        <%= f.label :date %>
-        <%= f.text_field :date, :id =>"dp5" %>
-      </div> 
-    </br>
+      <div class="container-fluid">
+        <h2 class="with-yellow"><%= @event.title %></h2>
+
+        <div class="form-inputs">
+          <%= f.input :title, :required => true, :autofocus => true %>
+        </div>
+
+        <div class="row-fluid">
+          <div class="span7">
+            <div class="field">
+              <%= f.label :description %>
+              <%= f.text_area :description, :style => "width:420px;", :required => true %>
+            </div>
+          </div>
+          <div class="span5">
+          </br>
+          <div class="field">
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+          </div>
+        </br>
+        <div class="field">
+          <%= f.label :date %>
+          <%= f.text_field :date, :value=>Date.today.strftime('%m/%d/%Y'), :id =>"dp5" %>
+        </div> 
+      </br>
       <div class="field">
         <%= f.label :time%>
-        <%= f.text_field :time,  :id =>"tp1" %>
+        <%= f.text_field :time, :value=>Time.current.strftime('%I%M%p'), :id =>"tp1" %>
       </div>
-      </br></br></br></br></br></br></br></br>
-      <div class="actions">
-        <%= f.button :submit, :class => "btn btn-large btn-block btn-success" %>
+      <div class="id hidden">
+        <%= f.text_field :timeline_object_id, :value=> @event.timeline_object_id %>
+      </div>
+    </br></br></br></br></br></br></br></br>
+    <div class="actions">
+      <%= f.button :submit, :class => "btn btn-large btn-block btn-custom" %>
     </div>
-    </div>
-  
   </div>
 </div>
 
-
-
-
 <% end %>
+</div>
 </div>
 </div>
 

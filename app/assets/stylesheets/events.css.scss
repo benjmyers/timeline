@@ -35,9 +35,12 @@
 .modal{
 	background-color: #202020;
 	color: #C8C8C8;
-	height: 600px;
+	height: 500px;
 	width: 1000px;
 	margin-left: -520px;
+}
+.description-field {
+	height: 170px;
 }
 .fade.in {
 	opacity: 0.95;

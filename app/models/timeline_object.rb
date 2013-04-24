@@ -7,7 +7,7 @@ class TimelineObject < ActiveRecord::Base
 
 	has_many :events 	
 
-	validates :title,:image, presence: true
+	validates :title, presence: true
 
   def get_events
     sorted_events = events.sort_by {|x| [x.date, x.time]}

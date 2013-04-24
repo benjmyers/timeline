@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
 	after_post_process :save_image_dimensions
 
 	validates :title, presence: true
-	validates :image, presence: true
+	#validates :image, presence: true
 	validates :time, presence: true
 	validates :date, presence: true
 

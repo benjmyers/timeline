@@ -1,9 +1,39 @@
 <div class="maincontainer">
 	<div class="offset">
-		<h3><%= @timeline_object.title %></h3>
-		<%= render 'form' %>
+<div class="span12">
+	<div class="entry offset2">
+		<%= simple_form_for(@timeline_object) do |f| %>
+			<% if @timeline_object.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@timeline_object.errors.count, "error") %> prohibited this timeline from being saved:</h2>
 
-		<%= link_to 'Show', @timeline_object %> |
-		<%= link_to 'Back', timeline_objects_path %>
+				<ul>
+					<% @timeline_object.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+			<% end %>
+
+		<h2 class="with-yellow"><%= @timeline_object.title %></h2>
+
+		<div class="form-inputs">
+			<%= f.input :title, :required => true, :autofocus => true %>
+			<%= f.input :description %>
+			<p> Image Thumbnail </br><%= f.file_field :image, :required => true %></p>
+		</div>
+		
+
+
+		<div class="small-footer span12">
+			<div class="container span4">
+				<%= f.button :submit,"Save Changes", :class => "btn btn-custom btn-large btn-block" %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+
 	</div>
 </div>

@@ -1,8 +1,15 @@
 // Place all the styles related to the TimelineObjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.indexitem {
+	padding: 10px;
+}
 .footer {
 	padding-top: 70px;
+}
+.small-footer{
+	padding-top: 25px;
+	margin-left: 0px;
 }
 .timelineindexheader {
 	padding: 10px;

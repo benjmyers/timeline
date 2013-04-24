@@ -5,7 +5,7 @@
 			<h2>Your Timelines</h2>
 
 			<% @timeline_objects.each do |timeline_object| %>
-			<div class="span6 row-fluid">
+			<div class="indexitem span6 row-fluid">
 				<blockquote>
 					<p class="title"><%= timeline_object.title %></p>
 					<p> <%= link_to (image_tag timeline_object.image.url(:thumb)), timeline_object %> </p>
