@@ -13,7 +13,10 @@
  *= require bootstrap-datepicker
  *= require bootstrap-timepicker
  */
- 
+.pattern-background
+{
+  background-image:url('blackorchid.png');
+}
 .buttoncontainer {
   float:center;
 }
@@ -111,7 +114,7 @@ body {
 	padding-left: 0px;
 	padding-right: 0px;
   padding-bottom: 0px;
-  background-color: #101010;
+  background-image:url('blackorchid.png');
   color: #C8C8C8;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
