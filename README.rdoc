@@ -16,11 +16,17 @@ Timeline is a simple web app aimed at allowing users to upload and concisely dis
 
 Distributed under the Apache License Version 2. See “license.txt” for more information.
 
-== Credit Where's It's Due
+== Credit Where It's Due
 This project relies on the work of others, namely in the form of the following Gems and Plugins:
-* <a href="https://github.com/thoughtbot/paperclip/#readme">Paperclip</a> for image uploading.
-* <a href="http://www.imagemagick.org/script/index.php">Imagemagick</a> for back end image scaling and manipulation.
-* <a href="https://github.com/tispratik/bootstrap-timepicker-rails">Bootstrap-Timepicker-Rails</a> and <a href="https://github.com/Nerian/bootstrap-datepicker-rails">Bootstrap-Datepicker-Rails</a> for time and date entry.
-* <a href="https://github.com/thoughtbot/high_voltage">High Voltage</a>, for easy linking to static pages.
-* <a href="https://github.com/plataformatec/devise">Devise</a>, for user account management.
-* <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a>, for pretty.
+* Paperclip for image uploading. 
+https://github.com/thoughtbot/paperclip/#readme
+* Imagemagick for back end image scaling and manipulation. 
+http://www.imagemagick.org/script/index.php
+* Bootstrap-Timepicker-Rails and Bootstrap-Datepicker-Rails for time and date entry.
+https://github.com/tispratik/bootstrap-timepicker-rails https://github.com/Nerian/bootstrap-datepicker-rails
+* High Voltage, for easy linking to static pages.
+https://github.com/thoughtbot/high_voltage
+* Devise, for user account management.
+https://github.com/plataformatec/devise
+* Twitter Bootstrap, for pretty.
+http://twitter.github.io/bootstrap
