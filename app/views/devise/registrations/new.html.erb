@@ -14,9 +14,11 @@
         <%= f.input :password_confirmation, :required => true %>
         <%= f.input :user_name, :required => true %>
       </div>
-
+      <p> By clicking "Sign Up", you're agreeing to the <%= link_to "Terms & Conditions",  page_path("terms.html.erb") %>
+    </br></p>
       <div class="actions">
         <%= f.button :submit, "Sign Up", :class => "btn btn-custom" %>
+
       </div>
       <% end %>
 

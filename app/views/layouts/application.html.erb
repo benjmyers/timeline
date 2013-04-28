@@ -9,23 +9,23 @@
 </head>
 <body>
 	<script type="text/javascript">
-		function Randomize() {
-			var images = new Array("img1.jpg","img2.jpg","img3.jpg","img4.jpg");
-			var imageNum = Math.floor(Math.random() * images.length);
-			document.getElementById("homecontainer").style.backgroundImage = "url('/assets/" + images[imageNum] + "')";
-		}
-		window.onload = Randomize;
+	function Randomize() {
+		var images = new Array("img1.jpg","img2.jpg","img3.jpg","img4.jpg");
+		var imageNum = Math.floor(Math.random() * images.length);
+		document.getElementById("homecontainer").style.backgroundImage = "url('/assets/" + images[imageNum] + "')";
+	}
+	window.onload = Randomize;
 	</script>
 	<style type="text/css">
-		#homecontainer {
-			  display: block;
-			  background-image: url('img1.jpg');
-			  background-repeat:no-repeat;
-			  background-size:100% 100%;
-			  min-width: 50%;
-			  height: 100%;
-			  width: 100%;
-		}
+	#homecontainer {
+		display: block;
+		background-image: url('img1.jpg');
+		background-repeat:no-repeat;
+		background-size:100% 100%;
+		min-width: 50%;
+		height: 100%;
+		width: 100%;
+	}
 	</style>
 	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
@@ -33,41 +33,52 @@
 				<a href='<%= home_index_path %>' class="brand"> Timeline</a>
 				<ul class="nav">
 <!-- 					Add menu bar stuff here
- -->				</ul>
-				<ul class="nav pull-right">
-					<% if user_signed_in? %>
-						<li><a href='<%= newtimeline_path %>'>New Timeline</a></li>
+-->				</ul>
+<ul class="nav pull-right">
+	<% if user_signed_in? %>
+	<li><a href='<%= newtimeline_path %>'>New Timeline</a></li>
 
-						<li><a href='<%= timelines_path %>'>Your Timelines</a></li>
+	<li><a href='<%= timelines_path %>'>Your Timelines</a></li>
 
-						<li><a href='<%= edit_user_registration_path %>'>Account</a></li>
 
-						<li><%= link_to "Log Out", destroy_user_session_path, :method => :delete  %></li>
 
-					<% else %>
-						<li><%= link_to "Sign Up", register_path %></li>
-						<li><%= link_to "Log In", login_path %></li>
-					<% end %>
-				</ul>
-			</div>
-		</div>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			Options
+			<b class="caret"></b>
+		</a>
+		<ul class="dropdown-menu">
+			<li><a href='<%= edit_user_registration_path %>'>Account</a></li>
+			<li><%= link_to "Log Out", destroy_user_session_path, :method => :delete  %></li>
+			<li><%= link_to "About", page_path("about.html") %></li>
+		</ul>
+	</li>
+
+	<% else %>
+	<li><%= link_to "Sign Up", register_path %></li>
+	<li><%= link_to "Log In", login_path %></li>
+	<li><%= link_to "About", page_path("about.html") %></li>
+	<% end %>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="maincontainer">
+	<% if flash[:notice] %>
+	<div class="alert alert-success">
+		<button class="close" data-dismiss="alert">x</button>
+		<%= flash[:notice] %>
 	</div>
-
-		<div class="maincontainer">
-			<% if flash[:notice] %>
-				<div class="alert alert-success">
-					<button class="close" data-dismiss="alert">x</button>
-					<%= flash[:notice] %>
-				</div>
-			<% end %>
-			<% if flash[:alert] %>
-				<div class="alert alert-error">
-					<button class="close" data-dismiss="alert">x</button>
-					<%= flash[:alert] %>
-				</div>
-			<% end %>
-			<%= yield %>
-		</div>
+	<% end %>
+	<% if flash[:alert] %>
+	<div class="alert alert-error">
+		<button class="close" data-dismiss="alert">x</button>
+		<%= flash[:alert] %>
+	</div>
+	<% end %>
+	<%= yield %>
+</div>
 
 
 </body>

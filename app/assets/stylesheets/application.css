@@ -33,8 +33,8 @@
  }
  .offset {
   padding-top: 80px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: auto;
+  padding-right: auto;
  }
 .maincontainer {
   height: 100%;
@@ -42,9 +42,18 @@
 
 }
 .isotopecontainer {
-  width:100%;
+  width:95%;
+  margin: auto;
 }
 .entry {
+  position:absolute;
+  top:25%;
+  background-color: #101010;
+  border-radius: 15px;
+  padding: 20px;
+  opacity: .95;
+}
+.entry-no-color {
   position:absolute;
   top:25%;
   background-color: #101010;
@@ -104,10 +113,26 @@ h2.modalheader {
   padding-bottom: 5px;
   margin:0px;
 }
-
+p.center {
+  text-align: center;
+}
+p.yellow {
+  color: #FF9800;
+  font-size: 18px;
+}
+p.blue {
+  color: #7E8AA2;
+}
+p.terms {
+  font-size: 16px;
+}
 .form-actions{
   background-color: #080808;
   border-top: 0px;
+}
+.wordwrap {
+  width: 750px;
+  word-wrap: break-word;
 }
 body {
 	padding-top: 0px;

@@ -12,7 +12,7 @@ gem 'simple_form'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails', :require => 'bootstrap-timepicker-rails',
                               :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
-
+gem "high_voltage"
 gem 'devise'
 group :development, :test do
 	gem 'sqlite3'

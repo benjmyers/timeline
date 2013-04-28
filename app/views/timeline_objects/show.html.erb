@@ -1,11 +1,11 @@
 <!-- <link rel="stylesheet" href="../assets/style.css" /> -->
 <div class="maincontainer pattern-background">
   <div class="offset">
-<div class="timelineindexheader span12">
+<div class="timelineindexheader span12 offset2">
   <div class="timelinethumb span2">
     <%= image_tag @timeline_object.image.url(:thumb) %>
   </div>
-  <div class="displaytimelinetitle span10">
+  <div class="displaytimelinetitle span8">
     <p class="title">
       <%= @timeline_object.title %>
     </p>
@@ -32,9 +32,6 @@
       <p class="weight"><%= event.date %></p>
 
     </div>
-
-
-
 <% end %>
 
 </div>
@@ -103,19 +100,11 @@
   };
   </script>
 </div>
-<div class="eventnew span12 row-fluid">
-    <div class="span4 offset8">
+<div class="eventnew span12">
+    <div class="span5 offset9">
     <%= link_to "Add Event", new_event_path(:data => @timeline_object.id), class: "btn btn-custom btn-large btn-block" %>
     </div>
 </div> 
 
-
-
-<div class="span12 row-fluid">
-  <div class="span2 offset11">
-    <%= link_to 'Edit', edit_timeline_object_path(@timeline_object) %> |
-    <%= link_to 'Back', timeline_objects_path %>
-  </div>
-</div>
 </div>
 </div>
