@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require jquery-1.7.1.min
+//= require jquery.isotope.min
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
 //= require_tree .
