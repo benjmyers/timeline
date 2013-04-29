@@ -23,10 +23,13 @@ https://github.com/thoughtbot/paperclip/#readme
 * Imagemagick for back end image scaling and manipulation. 
 http://www.imagemagick.org/script/index.php
 * Bootstrap-Timepicker-Rails and Bootstrap-Datepicker-Rails for time and date entry.
-https://github.com/tispratik/bootstrap-timepicker-rails https://github.com/Nerian/bootstrap-datepicker-rails
+https://github.com/tispratik/bootstrap-timepicker-rails 
+https://github.com/Nerian/bootstrap-datepicker-rails
 * High Voltage, for easy linking to static pages.
 https://github.com/thoughtbot/high_voltage
 * Devise, for user account management.
 https://github.com/plataformatec/devise
 * Twitter Bootstrap, for pretty.
 http://twitter.github.io/bootstrap
+* Isotope, for awesome.
+http://isotope.metafizzy.co/
