@@ -15,6 +15,8 @@
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require bootstrap-timepicker
+//= require jquery.isotope
+//= require jquery-1.7.1.min
 //= require_tree .
 //= require_self
 
