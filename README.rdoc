@@ -3,18 +3,17 @@
 Timeline is a simple web app aimed at allowing users to upload and concisely display media in chronological order. It is one of my Senior Capstone project at American University.
 
 
-== Progress
+== Status
 
+Version One has been released and can be found at: capstone-timeline.herokuapp.com
 * Users can sign up and sign in to access their timelines.
 * Multiple timelines per user can be created, and pictures can be uploaded from the user's computer. 
 * Pictures are displayed in order of date and time, and users can click the picture to view more information.
 * Everything can be viewed, edited or deleted after creation.
-* First version of user interface has been completed!
 
 
-== License
-
-Distributed under the Apache License Version 2. See “license.txt” for more information.
+== Known Issues
+* bootstrap-timepicker began exhibiting issues that wouldn't allow the user to enter a time. Until this has been resolved, users can manually enter times in an HH:MM 24 hour clock format.
 
 == Credit Where It's Due
 This project relies on the work of others, namely in the form of the following Gems and Plugins:
@@ -31,5 +30,10 @@ https://github.com/thoughtbot/high_voltage
 https://github.com/plataformatec/devise
 * Twitter Bootstrap, for pretty.
 http://twitter.github.io/bootstrap
-* Isotope, for awesome.
+* Isotope, for timeline view layout and animations.
 http://isotope.metafizzy.co/
+
+
+== License
+
+Distributed under the Apache License Version 2. See “license.txt” for more information.
